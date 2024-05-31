@@ -26,12 +26,9 @@ const Home = () => {
 			firstUpcomingCall = upcomingCalls[upcomingCalls.length - 1];
 		}
 
-		console.log(firstUpcomingCall);
 		const todayDate = now.toLocaleDateString();
 		const upcomingMeetingDate =
 			firstUpcomingCall?.state.startsAt?.toLocaleDateString();
-
-		console.log(todayDate, upcomingMeetingDate);
 
 		if (todayDate === upcomingMeetingDate) {
 			setMeetingTime(

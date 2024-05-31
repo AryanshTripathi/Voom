@@ -13,7 +13,10 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
 		useGetCalls();
 	const router = useRouter();
 	const [recordings, setRecordings] = useState<CallRecording[]>([]);
+	const [members, setMembers] = useState<any>([]);
 	const { toast } = useToast();
+
+	console.log(members);
 
 	const getCalls = () => {
 		switch (type) {
@@ -58,9 +61,28 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
 			}
 		};
 
+		// const fetchMembers = async () => {
+		// 	try {
+		// 		const membersData = await Promise.all(
+		// 			endedCalls?.map((call) => call.queryMembers())
+		// 		);
+
+		// 		const callMembers = membersData
+		// 			.filter((memberData) => memberData.members.length > 0)
+		// 			.flatMap((memberData) => memberData.members);
+
+		// 		setMembers(callMembers);
+		// 	} catch (error) {
+		// 		toast({ title: "Can't get members" });
+		// 	}
+		// };
+
 		if (type === "recordings") {
 			fetchRecordings();
 		}
+		// else {
+		// 	fetchMembers();
+		// }
 	}, [type, callRecordings]);
 
 	if (isLoading) {
