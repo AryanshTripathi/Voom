@@ -1,3 +1,4 @@
+//@ts-ignore
 "use client";
 
 import React, { useState } from "react";
@@ -49,7 +50,7 @@ const MeetingTypeList = () => {
 			}
 
 			const startsAt =
-				values.dateTime.toISOString() || new Date(Date.now()).toISOString;
+				values.dateTime.toISOString() || new Date(Date.now()).toISOString();
 			const description = values.description || "Instant Meeting";
 
 			await call.getOrCreate({
