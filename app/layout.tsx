@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Yoom",
+	title: "Voom",
 	description: "A full stack video conferencing app developed using NextJS",
 	icons: {
 		icon: "/icons/logo.svg",
@@ -23,6 +23,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+			{/* Wrapper used to provide active session and user context to Clerk's hooks*/}
 			<ClerkProvider
 				appearance={{
 					layout: {

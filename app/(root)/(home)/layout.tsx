@@ -4,7 +4,7 @@ import Sidebar from "@/components/Sidebar";
 import React, { ReactNode } from "react";
 
 export const metadata: Metadata = {
-	title: "Yoom",
+	title: "Voom",
 	description: "A full stack video conferencing app developed using NextJS",
 	icons: {
 		icon: "/icons/logo.svg",
@@ -21,7 +21,6 @@ const HomeLayout = ({ children }: { children: ReactNode }) => {
 					<div className="w-full">{children}</div>
 				</section>
 			</div>
-			Footer
 		</main>
 	);
 };

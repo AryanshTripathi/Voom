@@ -71,9 +71,17 @@
 	border: 3px solid #565761;
 }
 
+.cl-socialButtonsIconButton:first-child > .cl-providerIcon {
+	filter: invert(1);
+}
+
+/* .cl-socialButtons:first-child > .cl-providerIcon {
+} */
+
 .cl-internal-wkkub3 {
 	color: white;
 }
+
 .cl-userButtonPopoverActionButton {
 	color: white;
 }

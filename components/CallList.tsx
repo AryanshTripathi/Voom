@@ -6,8 +6,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import MeetingCard from "./MeetingCard";
 import Loader from "./Loader";
-import { toast, useToast } from "./ui/use-toast";
-import { title } from "process";
+import { useToast } from "./ui/use-toast";
 
 const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
 	const { endedCalls, upcomingCalls, callRecordings, isLoading } =

@@ -1,17 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {
-	StreamCall,
-	StreamVideo,
-	StreamVideoClient,
-	User,
-} from "@stream-io/video-react-sdk";
+import { StreamVideo, StreamVideoClient } from "@stream-io/video-react-sdk";
 import { useUser } from "@clerk/nextjs";
 import { tokenProvider } from "@/actions/stream.action";
 import Loader from "@/components/Loader";
-
-const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY;
 
 export const StreamVideoProvider = ({
 	children,
@@ -19,6 +12,8 @@ export const StreamVideoProvider = ({
 	children: React.ReactNode;
 }) => {
 	const [videoClient, setVideoClient] = useState<StreamVideoClient>();
+	const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY;
+
 	const { user, isLoaded } = useUser();
 
 	useEffect(() => {
@@ -29,6 +24,7 @@ export const StreamVideoProvider = ({
 			throw new Error("Stream API key missing");
 		}
 
+		// Creates a web socket connection
 		const client = new StreamVideoClient({
 			apiKey: apiKey,
 			user: {
